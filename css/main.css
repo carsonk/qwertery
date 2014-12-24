@@ -1,0 +1,105 @@
+body {
+  background-color: #178d91;
+  color: #fff;
+  font-family: 'Rokkitt', serif;
+}
+
+button {
+  background-color: #df4767;
+  color: #fff;
+  font-family: 'Rokkitt', serif;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  button:hover {
+    background-color: #dc5c77;
+  }
+  .large-button {
+    padding: 13px;
+    font-size: 28pt;
+  }
+
+input {
+  font-family: 'Rokkitt', serif;
+}
+
+.header {
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+.logo {
+  font-size: 40pt;
+}
+
+.countdown-text {
+  text-align: center;
+  display: none;
+}
+
+.race-container {
+  display: none;
+  width: 800px;
+  margin: 50px auto 0 auto;
+}
+  .race-text {
+    font-size: 30pt;
+    background-color: #eee;
+    color: #222;
+    padding: 19px;
+  }
+    .correct-word {
+      color: rgb(36, 244, 36);
+    }
+    .wrong-word {
+      color: #f20808;
+    }
+    .current-word {
+      color: #df4767;
+    }
+  .race-bottom {
+    margin: 0 auto 50px auto;
+    max-width: 838px;
+  }
+    .input-wrapper {
+      width: 50%;
+      margin: 0 auto;
+      display: inline-block;
+      float: left;
+    }
+      .current-word-input {
+        font-size: 30pt;
+        padding: 10px;
+        box-sizing: border-box;
+        border: none;
+        width: 100%;
+      }
+    .status-box {
+      background-color: #333;
+      width: 50%;
+      font-size: 30pt;
+      height: 62px;
+      display: inline-block;
+      box-sizing: border-box;
+      float: right;
+      padding: 10px;
+    }
+      .percent-complete {
+        color: #eee;
+        font-size: 20pt;
+      }
+      .status-slash {
+        font-size: 20pt;
+      }
+      .speed-unit-text {
+        color: #ccc;
+        font-size: 20pt;
+      }
+
+.enter-race-button-wrapper {
+  padding: 20px;
+  text-align: center;
+}

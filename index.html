@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>qwertery</title>
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <span class="logo">qwertery</span>
+      </div>
+      
+      <div class="countdown-text">Starting in <span class="countdown-seconds"></span>...</div>
+      
+      <div class="main">
+        <div class="race-container">
+          <div class="race-text">
+          </div>
+          <div class="race-bottom">
+            <div class="input-wrapper">
+              <input type="text" class="current-word-input" id="current-word-input">
+            </div>
+            <div class="status-box">
+              <span class="percent-complete">0%</span>
+              <span class="status-slash">/</span>
+              <span class="current-speed">0</span><span class="speed-unit-text">wpm</span>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="enter-race-button-wrapper">
+          <button class="init-button large-button" onclick="game.init()">Enter race</button>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
