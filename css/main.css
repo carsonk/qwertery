@@ -52,13 +52,13 @@ input {
     padding: 19px;
   }
     .correct-word {
-      color: rgb(36, 244, 36);
+      color: rgb(33, 165, 33);
     }
     .wrong-word {
       color: #f20808;
     }
     .current-word {
-      color: #df4767;
+      color: #178d91;
     }
   .race-bottom {
     margin: 0 auto 50px auto;
