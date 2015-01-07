@@ -1,5 +1,5 @@
 function Game() {
-  this.COUNTDOWN_SECONDS = 3;
+  this.COUNTDOWN_SECONDS = 5;
   this.WORD_LENGTH = 5;
   this.countdownRemaining = this.COUNTDOWN_SECONDS;
   
@@ -21,6 +21,7 @@ function Game() {
   this.currentChar = null;
   this.currentCharIndex = 0;
   this.onSpace = false;
+  this.correctStrokes = 0;
   
   this.wrongInputStatus = false;
   this.wrongCharacterIndex = null;
@@ -35,6 +36,7 @@ function Game() {
       this.loadText();
       this.startInitListeners();
       $(".race-container").slideDown();
+      $(".init-button").slideUp();
       this.startCountdown();
     }
   };
@@ -60,21 +62,14 @@ function Game() {
     
     // Keypress Listener -- handles usual alphanumeric characters
     $(this.wordInputBox).keypress(function(event) {
-      if(event.keycode != 8) {
+      if(event.keycode != 8) { // Keycode for backspace.
         instance.handleCharacterEntered(event);
       }
-      
-      var s = "charIndex: " + instance.currentCharIndex;
-      s += " wordIndex: " + instance.currentWordIndex;
-      s += " keyCode: " + event.keyCode;
-      s += " wrongInputStatus: " + instance.wrongInputStatus;
-      s += " awayFromWrongCharacter: " + instance.awayFromWrongCharacter;
-      $(".countdown-text").html(s);
     });
     
     // Keyup listener, handles backspace and stuff
-    $(this.wordInputBox).keyup(function(event) {
-      if(event.keyCode == 8) {
+    $(this.wordInputBox).keydown(function(event) {
+      if(event.keyCode == 8) { // Keycode for backspace.
         instance.handleCharacterEntered(event);
       }
     });
@@ -102,14 +97,29 @@ function Game() {
   this.startRace = function() {
     this.raceStarted = true;
     $(".countdown-text").html("Go!");
+    this.startTimer();
+  };
+  
+  this.endRace = function() {
+    this.stopTimer();
+    this.updateWordClasses(this.currentWordIndex, "correct-word");
+    this.raceEnded = true;
   };
   
   this.startTimer = function() {
-    
+    this.startTime = Date.now();
+    instance = this;
+    setInterval(function() {
+      instance.displayCurrentStats();
+    }, 2000);
+  };
+  
+  this.stopTimer = function() {
+    this.endTime = Date.now();
   };
   
   this.handleCharacterEntered = function(event) {
-    if(this.raceStarted) {
+    if(this.raceStarted && !this.raceEnded) {
       if(event.keyCode == 16) {
         event.preventDefault();
         return;
@@ -132,6 +142,11 @@ function Game() {
         if(event.keyCode == 8) {
           if(this.awayFromWrongCharacter > 0) {
             this.awayFromWrongCharacter--; 
+          } else {
+            console.log("preventing default");
+            
+            event.stopPropagation();
+            event.preventDefault();
           }
         } else {
           var charIsCorrect = this.checkCharacter(event);
@@ -160,6 +175,7 @@ function Game() {
   this.advanceIndices = function(correctStatus) {
     // If on last character or character after, move into first condition.
     // Will either move into space or next word, depending on if on space.
+    this.correctStrokes++;
     if(this.currentCharIndex >= (this.currentWord.length - 1)) {
       if(this.onSpace === true) {
         // Advance to next word.
@@ -176,6 +192,12 @@ function Game() {
         }
         this.onSpace = false;
       } else {
+        if(!this.doesNextWordExist()) {
+          // If next word doesn't exist.
+          this.endRace();
+          return; //stop
+        }
+        
         // Advance to space character.
         this.currentCharIndex++;
         this.onSpace = true;
@@ -214,12 +236,31 @@ function Game() {
     wordDom.addClass(newClass);
   };
   
-  this.stopTimer = function() {
-    
+  this.doesNextWordExist = function() {
+    return this.currentWordIndex < (this.splitText.length - 1);
   };
   
   this.calculateWPM = function() {
-    
+    var startTimeInSeconds = Math.floor(this.startTime / 1000);
+    var statusTime = (this.endTime > 0) ? this.endTime : Date.now();
+    var statusTimeInSeconds = Math.floor(statusTime / 1000);
+    var difference = statusTimeInSeconds - startTimeInSeconds;
+    if(difference < 1) return 0;
+    var correctWords = (this.correctStrokes / this.WORD_LENGTH); // word = characters / word length
+    var wordsPerSecond = correctWords / difference; // wps = words / second
+    var wordsPerMinute = wordsPerSecond * 60;
+    return Math.round(wordsPerMinute);
+  };
+  
+  this.calculatePercentage = function() {
+    return Math.floor((this.correctStrokes / this.plainText.length) * 100);
+  };
+  
+  this.displayCurrentStats = function() {
+    var currentWPM = this.calculateWPM();
+    $(".current-speed").html(currentWPM.toString());
+    var currentPercentage = this.calculatePercentage();
+    $(".percent-complete-value").html(currentPercentage);
   };
 }
 
