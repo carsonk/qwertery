@@ -1,4 +1,12 @@
 function Game() {
+  this.QUOTES = [
+    "Human beings, who are almost unique in having the ability to learn from the experience of others, are also remarkable for their apparent disinclination to do so.",
+    "The story so far: In the beginning the Universe was created. This has made a lot of people very angry and been widely regarded as a bad move.",
+    "For instance, on the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much-the wheel, New York, wars and so on-whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man-for precisely the same reasons.",
+    "There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable. There is another theory which states that this has already happened.",
+    "This planet has - or rather had - a problem, which was this: most of the people living on it were unhappy for pretty much of the time. Many solutions were suggested for this problem, but most of these were largely concerned with the movement of small green pieces of paper, which was odd because on the whole it wasn't the small green pieces of paper that were unhappy."
+  ];
+  
   this.COUNTDOWN_SECONDS = 5;
   this.WORD_LENGTH = 5;
   this.countdownRemaining = this.COUNTDOWN_SECONDS;
@@ -41,9 +49,13 @@ function Game() {
     }
   };
 
+  this.getRandomPlainTextQuote = function() {
+    return this.QUOTES[Math.floor(Math.random() * this.QUOTES.length)];
+  }
+  
   // Loads text into box.
   this.loadText = function() {
-    this.plainText = "Two roads diverged in a yellow wood, And sorry I could not travel both, And be one traveler, long I stood, And looked down one as far as I could, To where it bent in the undergrowth.";
+    this.plainText = this.getRandomPlainTextQuote();
     this.splitText = this.plainText.split(' ');
     var htmlText = '';
     
@@ -97,6 +109,7 @@ function Game() {
   this.startRace = function() {
     this.raceStarted = true;
     $(".countdown-text").html("Go!");
+    $(this.wordInputBox).focus();
     this.startTimer();
   };
   
