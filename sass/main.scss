@@ -1,0 +1,107 @@
+* { 
+  padding: 0; 
+  margin: 0;
+  font-family: 'Rokkitt', serif;
+}
+
+body {
+  color: #000;
+  font-family: 'Rokkitt', serif;
+}
+
+/*********************
+* DOM ORGANIZED
+**********************/
+
+$sidebar-width: 343px;
+$sidebar-button-border-radius: 0 5px 5px 0;
+$box-shadow-1: 6px 5px 26px -8px rgba(0,0,0,0.75);
+
+.sidebar-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ebebeb;
+  
+  .sidebar {
+    height: 100%;
+    width: $sidebar-width;
+    padding: 15px 0;
+    
+    .race-button {
+      margin: 15px 15px 0 0;
+      background-color: #2e2e2e;
+      font: 400 56.25px / 66.708px 'Rokkitt';
+      color: #fff;
+      padding: 10px 10px;
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      border-radius: $sidebar-button-border-radius;
+      box-shadow: $box-shadow-1;
+    }
+    .race-button:hover {
+      background-color: #3d6acf;
+      cursor: pointer;
+    }
+    .race-button-small {
+      font-size: 35px;
+      margin-right: 35px;
+      padding: 0 10px;
+    }
+    #start-race-button {
+      background-image: url(../images/keyboard-button-bg.png);
+    }
+    #invite-friends-button {
+      background-image: url(../images/people-racing-button-bg.png);
+    }
+      
+    .login-buttons {
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      right: 15px;
+      
+      .login-button {
+        background: #3d6acf;
+        margin-bottom: 15px;
+        color: #fff;
+        font-size: 35px;
+        margin-right: 35px;
+        padding: 5px 10px;
+        border-radius: $sidebar-button-border-radius;
+        box-shadow: $box-shadow-1;
+      }
+      .login-button:hover {
+        background: #3d83cf;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.main-content-wrapper {
+  position: absolute;
+  left: $sidebar-width;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #fff;
+  
+  .main-content {
+    text-align: center;
+    
+    .centered-presentation {
+      margin-top: 8%;
+      margin-left: auto;
+      margin-right: auto;
+      
+      #index-keyboard-icon-wrapper {
+        
+      }
+      #index-logo {
+        font-size: 500%;
+      }
+    }
+  }
+}
