@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    title="qwertery"
+    block font-links
+      link(
+        href!='http://fonts.googleapis.com/css?family=Rokkitt', 
+        rel='stylesheet', 
+        type!='text/css'
+      )
+    block stylesheets
+      link(rel='stylesheet', href!='css/main.css')
+  body
+    .sidebar-wrapper
+      block sidebar
+        .sidebar
+          .race-buttons
+            .race-button#start-race-button
+              | Start Race
+            .race-button.race-button-small#invite-friends-button
+              | Invite Friends
+          .login-buttons
+            .login-button
+              | Signup
+            .login-button
+              | Login
+    .main-content-wrapper
+      .main-content
+        block main-content
+          .centered-presentation
+            #index-keyboard-icon-wrapper
+              img#index-keyboard-icon(src!="images/keyboard-white.png")
+            #index-logo
+              | qwertery
+    block body-scripts
+      script(src!="js/jquery.js")
+      script(src!="js/game.js")

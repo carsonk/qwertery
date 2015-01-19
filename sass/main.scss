@@ -11,6 +11,42 @@ body {
 }
 
 /*********************
+* GENERAL RULES
+**********************/
+
+.content-panel {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #efefef;
+  text-align: left;
+  padding: 30px;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+}
+
+input[type="text"], input[type="password"] {
+  background-color: #fff;
+  color: #444;
+  padding: 7px 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #3d6acf;
+  padding: 7px 10px;
+  border: 1px solid #294688;
+  color: #fff;
+  border-radius: 3px;
+  font-family: 'Rokkitt', serif;
+  font-size: 120%;
+  cursor: pointer;
+}
+  input[type="submit"]:hover {
+    background-color: #294688;
+  }
+
+/*********************
 * DOM ORGANIZED
 **********************/
 
@@ -54,10 +90,10 @@ $box-shadow-1: 6px 5px 26px -8px rgba(0,0,0,0.75);
       padding: 0 10px;
     }
     #start-race-button {
-      background-image: url(../images/keyboard-button-bg.png);
+      background-image: url(/images/keyboard-button-bg.png);
     }
     #invite-friends-button {
-      background-image: url(../images/people-racing-button-bg.png);
+      background-image: url(/images/people-racing-button-bg.png);
     }
       
     .login-buttons {

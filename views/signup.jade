@@ -1,0 +1,27 @@
+extends ./layouts/primary.jade
+
+block stylesheets
+  link(rel="stylesheet", href!="/css/login.css")
+
+block main-content
+  .login-box-wrapper
+    .login-logo="qwertery"
+    .signup-box
+      h2="Signup"
+      .input-wrapper
+        input.login-field.username-field(
+          type="text", name="username", placeholder="Username"
+        )
+      .input-wrapper
+        input.login-field.email-field(
+          type="text", name="email", placeholder="Email"
+        )
+      .input-wrapper
+        input.login-field.password-field(
+          type="password", name="password", placeholder="Password"
+        )
+      .input-wrapper
+        input.login-field.confirm-pass-field(
+          type="password", name="password-confirm", placeholder="Confirm Password"
+        )
+      input.submit(type="submit", name="init-login")

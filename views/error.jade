@@ -1,6 +1,7 @@
-extends layout
+extends ./layouts/primary.jade
 
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+block main-content
+  .content-panel
+    h1= message
+    h2= error.status
+    pre #{error.stack}
