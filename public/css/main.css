@@ -9,29 +9,31 @@
 body {
   color: #000;
   font-family: 'Rokkitt', serif;
+  background-color: #0e0e0e;
 }
 
 /*********************
 * DOM ORGANIZED
 **********************/
-/* line 20, ../../sass/main.scss */
+/* line 21, ../../sass/main.scss */
 .sidebar-wrapper {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #ebebeb;
+  background-color: #2e2e2e;
+  z-index: 3;
 }
-/* line 27, ../../sass/main.scss */
+/* line 29, ../../sass/main.scss */
 .sidebar-wrapper .sidebar {
   height: 100%;
-  width: 343px;
+  width: 330px;
   padding: 15px 0;
 }
-/* line 32, ../../sass/main.scss */
+/* line 34, ../../sass/main.scss */
 .sidebar-wrapper .sidebar .race-button {
   margin: 15px 15px 0 0;
-  background-color: #2e2e2e;
+  background-color: #cf583d;
   font: 400 56.25px/66.708px "Rokkitt";
   color: #fff;
   padding: 10px 10px;
@@ -39,34 +41,36 @@ body {
   background-repeat: no-repeat;
   border-radius: 0 5px 5px 0;
   box-shadow: 6px 5px 26px -8px rgba(0, 0, 0, 0.75);
+  border: thin solid #000;
+  border-left: none;
 }
-/* line 43, ../../sass/main.scss */
+/* line 47, ../../sass/main.scss */
 .sidebar-wrapper .sidebar .race-button:hover {
   background-color: #3d6acf;
   cursor: pointer;
 }
-/* line 47, ../../sass/main.scss */
+/* line 51, ../../sass/main.scss */
 .sidebar-wrapper .sidebar .race-button-small {
   font-size: 35px;
   margin-right: 35px;
   padding: 0 10px;
 }
-/* line 52, ../../sass/main.scss */
+/* line 56, ../../sass/main.scss */
 .sidebar-wrapper .sidebar #start-race-button {
   background-image: url(../images/keyboard-button-bg.png);
 }
-/* line 55, ../../sass/main.scss */
+/* line 59, ../../sass/main.scss */
 .sidebar-wrapper .sidebar #invite-friends-button {
   background-image: url(../images/people-racing-button-bg.png);
 }
-/* line 59, ../../sass/main.scss */
+/* line 63, ../../sass/main.scss */
 .sidebar-wrapper .sidebar .login-buttons {
   position: absolute;
   bottom: 15px;
   left: 0;
   right: 15px;
 }
-/* line 65, ../../sass/main.scss */
+/* line 69, ../../sass/main.scss */
 .sidebar-wrapper .sidebar .login-buttons .login-button {
   background: #3d6acf;
   margin-bottom: 15px;
@@ -77,32 +81,37 @@ body {
   border-radius: 0 5px 5px 0;
   box-shadow: 6px 5px 26px -8px rgba(0, 0, 0, 0.75);
 }
-/* line 75, ../../sass/main.scss */
+/* line 79, ../../sass/main.scss */
 .sidebar-wrapper .sidebar .login-buttons .login-button:hover {
   background: #3d83cf;
   cursor: pointer;
 }
 
-/* line 83, ../../sass/main.scss */
+/* line 87, ../../sass/main.scss */
 .main-content-wrapper {
   position: absolute;
-  left: 343px;
+  left: 330px;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #fff;
 }
-/* line 91, ../../sass/main.scss */
+/* line 94, ../../sass/main.scss */
 .main-content-wrapper .main-content {
   text-align: center;
 }
-/* line 94, ../../sass/main.scss */
+/* line 97, ../../sass/main.scss */
 .main-content-wrapper .main-content .centered-presentation {
   margin-top: 8%;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 102, ../../sass/main.scss */
+/* line 104, ../../sass/main.scss */
+.main-content-wrapper .main-content .centered-presentation #index-keyboard-icon-wrapper #index-keyboard-icon {
+  opacity: .5;
+}
+/* line 108, ../../sass/main.scss */
 .main-content-wrapper .main-content .centered-presentation #index-logo {
   font-size: 500%;
+  color: #fff;
+  opacity: .5;
 }

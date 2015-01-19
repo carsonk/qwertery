@@ -7,13 +7,14 @@
 body {
   color: #000;
   font-family: 'Rokkitt', serif;
+  background-color: #0e0e0e;
 }
 
 /*********************
 * DOM ORGANIZED
 **********************/
 
-$sidebar-width: 343px;
+$sidebar-width: 330px;
 $sidebar-button-border-radius: 0 5px 5px 0;
 $box-shadow-1: 6px 5px 26px -8px rgba(0,0,0,0.75);
 
@@ -22,7 +23,8 @@ $box-shadow-1: 6px 5px 26px -8px rgba(0,0,0,0.75);
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #ebebeb;
+  background-color: #2e2e2e;
+  z-index: 3;
   
   .sidebar {
     height: 100%;
@@ -31,7 +33,7 @@ $box-shadow-1: 6px 5px 26px -8px rgba(0,0,0,0.75);
     
     .race-button {
       margin: 15px 15px 0 0;
-      background-color: #2e2e2e;
+      background-color: #cf583d;
       font: 400 56.25px / 66.708px 'Rokkitt';
       color: #fff;
       padding: 10px 10px;
@@ -39,6 +41,8 @@ $box-shadow-1: 6px 5px 26px -8px rgba(0,0,0,0.75);
       background-repeat: no-repeat;
       border-radius: $sidebar-button-border-radius;
       box-shadow: $box-shadow-1;
+      border: thin solid #000;
+      border-left: none;
     }
     .race-button:hover {
       background-color: #3d6acf;
@@ -86,7 +90,6 @@ $box-shadow-1: 6px 5px 26px -8px rgba(0,0,0,0.75);
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #fff;
   
   .main-content {
     text-align: center;
@@ -98,9 +101,14 @@ $box-shadow-1: 6px 5px 26px -8px rgba(0,0,0,0.75);
       
       #index-keyboard-icon-wrapper {
         
+        #index-keyboard-icon {
+          opacity: .5;
+        }
       }
       #index-logo {
         font-size: 500%;
+        color: #fff;
+        opacity: .5;
       }
     }
   }
