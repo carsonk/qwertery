@@ -16,13 +16,13 @@ html(lang="en")
         .sidebar
           .race-buttons
             .race-button#start-race-button
-              | Start Race
+              | START RACE
             .race-button.race-button-small#invite-friends-button
-              | Invite Friends
+              | INVITE FRIENDS
           .login-buttons
-            .login-button
+            .login-button(onclick!="document.location = '/users/signup'")
               | Signup
-            .login-button
+            .login-button(onclick!="document.location = '/users/login'")
               | Login
     .main-content-wrapper
       .main-content

@@ -1,0 +1,27 @@
+extends ./layouts/primary.jade
+
+block stylesheets
+  link(rel="stylesheet", href!="/css/race.css")
+
+block main-content
+  .race-upper-pane
+    .race-text-wrapper
+      .race-text
+        | Human beings, who are almost unique in having the ability to learn from the experience of others, are also remarkable for their apparent disinclination to do so.
+    .race-input-wrapper
+      input.race-input(type="text")
+  .race-lower-pane
+    .race-status-header
+      | RACE STATUS
+    .race-status-content
+      .players-wrapper
+        .player-status
+          .graph
+          .text-status
+        .player-status
+          .graph
+          .text-status
+        .player-status
+          .graph
+          .text-status
+    
