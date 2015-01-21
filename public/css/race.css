@@ -194,8 +194,9 @@ input[type="submit"]:hover {
   border-radius: 0;
   color: #1f1f1f;
   width: 310px;
+  padding: 15px 10px;
 }
-/* line 43, ../../sass/race.scss */
+/* line 44, ../../sass/race.scss */
 .main-content .race-lower-pane {
   position: absolute;
   height: 40%;
@@ -204,7 +205,7 @@ input[type="submit"]:hover {
   background-color: #111;
   text-align: left;
 }
-/* line 51, ../../sass/race.scss */
+/* line 52, ../../sass/race.scss */
 .main-content .race-lower-pane .race-status-header {
   color: #696969;
   border: 1px solid #696969;
@@ -212,4 +213,13 @@ input[type="submit"]:hover {
   border-right: none;
   font-size: 110%;
   padding: 3px 4px;
+}
+/* line 63, ../../sass/race.scss */
+.main-content .race-lower-pane .race-status-content .players-wrapper .player-status {
+  display: inline-block;
+}
+/* line 66, ../../sass/race.scss */
+.main-content .race-lower-pane .race-status-content .players-wrapper .player-status canvas.graph {
+  width: 250px;
+  height: 250px;
 }

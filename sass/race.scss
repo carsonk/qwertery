@@ -36,6 +36,7 @@ $lower-pane-height: 40%;
         border-radius: 0;
         color: #1f1f1f;
         width: 310px;
+        padding: 15px 10px;
       }
     }
   }
@@ -55,6 +56,22 @@ $lower-pane-height: 40%;
       border-right: none;
       font-size: 110%;
       padding: 3px 4px;
+    }
+    
+    .race-status-content {
+      .players-wrapper {
+        .player-status {
+          display: inline-block;
+          
+          canvas.graph {
+            width: 250px;
+            height: 250px;
+          }
+          .text-status {
+            
+          }
+        }
+      }
     }
   }
 }

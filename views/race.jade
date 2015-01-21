@@ -16,12 +16,14 @@ block main-content
     .race-status-content
       .players-wrapper
         .player-status
-          .graph
+          canvas.graph#graph-1(width="250", height="250")
           .text-status
         .player-status
-          .graph
+          canvas.graph
           .text-status
         .player-status
-          .graph
+          canvas.graph
           .text-status
-    
+          
+block append body-scripts
+  script(src!="js/race-visuals.js")
