@@ -1,0 +1,84 @@
+@import 'main';
+
+$lower-pane-height: 40%;
+
+.main-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  .race-upper-pane {
+    position: absolute;
+    top: 40px;
+    
+    .race-text-wrapper {
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      
+      .race-text {
+        width: 100%;
+        color: #b5b5b5;
+        font-size: 300%;
+      }
+      
+      
+    }
+    
+    .race-input-wrapper {
+      margin-top: 75px; 
+      
+      .race-input {
+        background-color: #b5b5b5;
+        font-size: 290%;
+        border-radius: 0;
+        color: #1f1f1f;
+        width: 310px;
+        padding: 15px 10px;
+      }
+    }
+  }
+  
+  .race-lower-pane {
+    position: absolute;
+    height: $lower-pane-height;
+    bottom: 0;
+    width: 100%;
+    background-color: #111;
+    text-align: left;
+    
+    .race-status-header {
+      color: #696969;
+      border: 1px solid #696969;
+      border-left: none;
+      border-right: none;
+      font-size: 110%;
+      padding: 3px 4px;
+    }
+    
+    .race-status-content {
+      padding: 10px 5px;
+      
+      .players-wrapper {
+        .player-status-wrapper {
+          display: inline-block;
+          width: 33%;
+          text-align: center;
+          
+          .player-status {
+            canvas.graph {
+              width: 250px;
+              height: 250px;
+            }
+            .text-status {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

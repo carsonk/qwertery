@@ -1,0 +1,15 @@
+extends ./layouts/primary.jade
+
+block stylesheets
+  link(rel="stylesheet", href!="/css/login.css")
+
+block main-content
+  .login-box-wrapper
+    .login-logo="qwertery"
+    .login-box
+      h2="Login"
+      .input-wrapper
+        input.login-field.username-field(type="text", name="username", placeholder="Username / Email")
+      .input-wrapper
+        input.login-field.password-field(type="password", name="password", placeholder="Password")
+      input.submit(type="submit", name="init-login")

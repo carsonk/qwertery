@@ -1,0 +1,37 @@
+@import 'main';
+
+.login-box-wrapper {
+  width: 100%;
+  margin-top: 8%;
+  
+  .login-logo {
+    color: #fff; 
+    font-size: 200%;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+  }
+  
+  .login-field {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 150%;
+    margin-top: 15px;
+  }
+  
+  .submit {
+    margin-top: 30px; 
+  }
+  
+  .login-box {
+    @extend .content-panel;
+    width: 350px;
+  }
+  
+  .signup-box {
+    @extend .content-panel;
+    width: 350px;
+  }
+}
