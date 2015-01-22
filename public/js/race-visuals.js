@@ -1,8 +1,30 @@
 function RaceVisuals() {
   this.init = function() {
-    canvas = document.getElementById("graph-1");
-    var graph = new Graph(canvas);
-    graph.drawSegment();
+    canvas1 = document.getElementById("graph-1");
+    var graph1 = new Graph(canvas1);
+    graph1.drawSegment();
+    
+    canvas2 = document.getElementById("graph-2");
+    var graph2 = new Graph(canvas2);
+    graph2.drawSegment();
+    
+    canvas3 = document.getElementById("graph-3");
+    var graph3 = new Graph(canvas3);
+    graph3.drawSegment();
+  };
+  
+  this.startListeners = function() {
+    var instance = this;
+    
+    $(window).resize(function() {
+      instance.verticalAlign();
+    });
+  };
+  
+  this.verticalAlign = function() {
+    var mainContentHeight = $(".main-content").height();
+    var upperPaneHeight = $(".race-upper-pane").height();
+    
   };
 }
 

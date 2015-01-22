@@ -15,15 +15,18 @@ block main-content
       | RACE STATUS
     .race-status-content
       .players-wrapper
-        .player-status
-          canvas.graph#graph-1(width="250", height="250")
-          .text-status
-        .player-status
-          canvas.graph
-          .text-status
-        .player-status
-          canvas.graph
-          .text-status
-          
+        .player-status-wrapper
+          .player-status
+            canvas.graph#graph-1(width="250", height="250")
+            .text-status
+        .player-status-wrapper
+          .player-status
+            canvas.graph#graph-2(width="250", height="250")
+            .text-status
+        .player-status-wrapper
+          .player-status
+            canvas.graph#graph-3(width="250", height="250")
+            .text-status
+
 block append body-scripts
   script(src!="js/race-visuals.js")

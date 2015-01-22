@@ -10,9 +10,10 @@ $lower-pane-height: 40%;
   bottom: 0;
   
   .race-upper-pane {
+    position: absolute;
+    top: 40px;
     
     .race-text-wrapper {
-      padding-top: 3%;
       width: 75%;
       margin-left: auto;
       margin-right: auto;
@@ -59,16 +60,22 @@ $lower-pane-height: 40%;
     }
     
     .race-status-content {
+      padding: 10px 5px;
+      
       .players-wrapper {
-        .player-status {
+        .player-status-wrapper {
           display: inline-block;
+          width: 33%;
+          text-align: center;
           
-          canvas.graph {
-            width: 250px;
-            height: 250px;
-          }
-          .text-status {
-            
+          .player-status {
+            canvas.graph {
+              width: 250px;
+              height: 250px;
+            }
+            .text-status {
+
+            }
           }
         }
       }
