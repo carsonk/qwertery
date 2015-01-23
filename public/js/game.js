@@ -7,7 +7,7 @@ function Game() {
     "This planet has - or rather had - a problem, which was this: most of the people living on it were unhappy for pretty much of the time. Many solutions were suggested for this problem, but most of these were largely concerned with the movement of small green pieces of paper, which was odd because on the whole it wasn't the small green pieces of paper that were unhappy."
   ];
   
-  this.COUNTDOWN_SECONDS = 5;
+  this.COUNTDOWN_SECONDS = 3;
   this.WORD_LENGTH = 5;
   this.countdownRemaining = this.COUNTDOWN_SECONDS;
   
@@ -38,14 +38,15 @@ function Game() {
   
   this.wordInputBox = $("#current-word-input");
   
+  this.raceVisuals = new RaceVisuals();
+  
   // Initiates race.
   this.init = function() {
     if(this.countdownStarted == false) {
       this.loadText();
       this.startInitListeners();
-      $(".race-container").slideDown();
-      $(".init-button").slideUp();
       this.startCountdown();
+      this.raceVisuals.init();
     }
   };
 
@@ -278,3 +279,4 @@ function Game() {
 }
 
 var game = new Game();
+game.init();

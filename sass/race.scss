@@ -12,6 +12,7 @@ $lower-pane-height: 40%;
   .race-upper-pane {
     position: absolute;
     top: 40px;
+    width: 100%;
     
     .race-text-wrapper {
       width: 75%;
@@ -22,10 +23,18 @@ $lower-pane-height: 40%;
       .race-text {
         width: 100%;
         color: #b5b5b5;
-        font-size: 300%;
+        font-size: 250%;
+        
+        .correct-word {
+          color: #fff;
+        }
+        .wrong-word {
+          color: #ce3d3d;
+        }
+        .current-word {
+          color: #a3ccff;
+        }
       }
-      
-      
     }
     
     .race-input-wrapper {

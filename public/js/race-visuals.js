@@ -25,7 +25,7 @@ function RaceVisuals() {
   };
   
   this.verticalAlign = function() {
-    
+    console.debug("Performing veritcal align...");
     var upperPaneHeight = $(".race-upper-pane").height();
     var lowerPaneHeight = $(".race-lower-pane").height();
     
@@ -54,8 +54,6 @@ function Graph(canvas) {
     var centerY = Math.floor(this.canvas.height / 2);
     var radius = Math.floor(this.canvas.width / 2);
     
-    console.log(centerX + ", " + centerY); 
-    
     var startingAngle = degreesToRadians(270);
     var arcSize = degreesToRadians(340);
     var endingAngle = startingAngle + arcSize;
@@ -76,6 +74,3 @@ function Graph(canvas) {
 function degreesToRadians(degrees) {
   return (degrees * Math.PI)/180;
 }
-
-var raceVisuals = new RaceVisuals();
-raceVisuals.init();

@@ -6,10 +6,9 @@ block stylesheets
 block main-content
   .race-upper-pane
     .race-text-wrapper
-      .race-text
-        | Human beings, who are almost unique in having the ability to learn from the experience of others, are also remarkable for their apparent disinclination to do so.
+      .race-text="..."
     .race-input-wrapper
-      input.race-input(type="text")
+      input.race-input#current-word-input(type="text")
   .race-lower-pane
     .race-status-header
       | RACE STATUS
@@ -36,3 +35,4 @@ block main-content
 
 block append body-scripts
   script(src!="js/race-visuals.js")
+  script(src!="js/game.js")
