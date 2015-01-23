@@ -11,6 +11,9 @@ function RaceVisuals() {
     canvas3 = document.getElementById("graph-3");
     var graph3 = new Graph(canvas3);
     graph3.drawSegment();
+    
+    this.verticalAlign();
+    this.startListeners();
   };
   
   this.startListeners = function() {
@@ -22,9 +25,22 @@ function RaceVisuals() {
   };
   
   this.verticalAlign = function() {
-    var mainContentHeight = $(".main-content").height();
-    var upperPaneHeight = $(".race-upper-pane").height();
     
+    var upperPaneHeight = $(".race-upper-pane").height();
+    var lowerPaneHeight = $(".race-lower-pane").height();
+    
+    var mainContentHeight = $(".main-content").height();
+    var upperPaneTop = (mainContentHeight - upperPaneHeight - lowerPaneHeight) / 2;
+    upperPaneTop = upperPaneTop - 5;
+    var upperPaneTopStr = String(upperPaneTop) + "px";
+    $(".race-upper-pane").css("top", upperPaneTopStr);
+    
+    var statusHeaderHeight = $(".race-status-header").height();
+    var statusContentHeight = $(".race-status-content").height();
+    
+    var raceStatusTop = (lowerPaneHeight - statusHeaderHeight - statusContentHeight) / 2;
+    var raceStatusTopStr = String(raceStatusTop) + "px";
+    $(".race-status-content").css("top", raceStatusTopStr);
   };
 }
 

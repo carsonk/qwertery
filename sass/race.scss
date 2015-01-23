@@ -60,9 +60,15 @@ $lower-pane-height: 40%;
     }
     
     .race-status-content {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      right: 0;
       padding: 10px 5px;
       
       .players-wrapper {
+        width: 100%;
+        
         .player-status-wrapper {
           display: inline-block;
           width: 33%;
@@ -70,11 +76,22 @@ $lower-pane-height: 40%;
           
           .player-status {
             canvas.graph {
-              width: 250px;
-              height: 250px;
+              width: 200px;
+              height: 200px;
             }
             .text-status {
-
+              margin-top: 5px;
+              
+              .player-name {
+                font-size: 200%;
+                color: #e1e1e1;
+                margin-right: 5px;
+              }
+              .player-wpm {
+                font-size: 200%;
+                color: #696969;
+                margin-left: 5px;
+              }
             }
           }
         }

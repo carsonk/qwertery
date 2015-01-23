@@ -17,16 +17,22 @@ block main-content
       .players-wrapper
         .player-status-wrapper
           .player-status
-            canvas.graph#graph-1(width="250", height="250")
+            canvas.graph#graph-1(width="200", height="200")
             .text-status
+              span.player-name="Carson"
+              span.player-wpm="30wpm"
         .player-status-wrapper
           .player-status
-            canvas.graph#graph-2(width="250", height="250")
+            canvas.graph#graph-2(width="200", height="200")
             .text-status
+              span.player-name="WhateverItIsIsHere"
+              span.player-wpm="30wpm"
         .player-status-wrapper
           .player-status
-            canvas.graph#graph-3(width="250", height="250")
+            canvas.graph#graph-3(width="200", height="200")
             .text-status
+              span.player-name="LooksLikeStuffLong"
+              span.player-wpm="30wpm"
 
 block append body-scripts
   script(src!="js/race-visuals.js")
